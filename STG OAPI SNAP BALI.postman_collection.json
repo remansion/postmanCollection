@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "42d7f9fe-ca4a-434d-8d91-44614a54254f",
+		"name": "STG OAPI SNAP BALI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26316739"
+	},
+	"item": [
+		{
+			"name": "Access Token",
+			"item": [
+				{
+					"name": "Access Token B2B",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.environment.set(\"TOKEN_SNAP\", jsonData[\"accessToken\"]);\r",
+									"\r",
+									"console.log(jsonData[\"accessToken\"]);\r",
+									"\r",
+									"// pm.globals.set(\"variable_key\", \"variable_value\");\r",
+									"// pm.collectionVariables.set(\"variable_key\", \"variable_value\");\r",
+									"\r",
+									"// pm.environment.get(\"variable_key\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-CLIENT-KEY",
+								"value": "8c2bebcc-a3b8-4eaa-b8f6-7b9907bbe2b6",
+								"type": "text"
+							},
+							{
+								"key": "X-TIMESTAMP",
+								"value": "2022-09-28T10:30:00+07:00",
+								"type": "text"
+							},
+							{
+								"key": "X-SIGNATURE",
+								"value": "Ier37lSaYxB06fYGu+1Yr5ICeNbCAmtAO4HO6cD92I1kwiZ7Hxkj95h3zOg2M/w+pmXx7EUSG8Dc5MCaErVgCbp8AnRHfQyfY0Y/fHtQTa3/wfGy3qGtjUAAmHyiNutYo0vEdlisjRQ901VNQxARtzITg3bLpEidwHF6u1yZwKg=",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"grantType\": \"client_credentials\",\r\n    \"additionalInfo\": {}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/v1.0/access-token/b2b",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"v1.0",
+								"access-token",
+								"b2b"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Positif",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-CLIENT-KEY",
+										"value": "8c2bebcc-a3b8-4eaa-b8f6-7b9907bbe2b6",
+										"type": "text"
+									},
+									{
+										"key": "X-TIMESTAMP",
+										"value": "2022-09-28T10:30:00+07:00",
+										"type": "text"
+									},
+									{
+										"key": "X-SIGNATURE",
+										"value": "Ier37lSaYxB06fYGu+1Yr5ICeNbCAmtAO4HO6cD92I1kwiZ7Hxkj95h3zOg2M/w+pmXx7EUSG8Dc5MCaErVgCbp8AnRHfQyfY0Y/fHtQTa3/wfGy3qGtjUAAmHyiNutYo0vEdlisjRQ901VNQxARtzITg3bLpEidwHF6u1yZwKg=",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"grantType\": \"client_credentials\",\r\n    \"additionalInfo\": {}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/security/access-token/b2b",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"security",
+										"access-token",
+										"b2b"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiJ9.eyJ0b2tlbkRhdGEiOnsiY2xpZW50SWQiOiI4YzJiZWJjYy1hM2I4LTRlYWEtYjhmNi03Yjk5MDdiYmUyYjYiLCJjdXN0b21lckFjY2Vzc1Rva2VuIjpudWxsfSwic3ViIjoiOGMyYmViY2MtYTNiOC00ZWFhLWI4ZjYtN2I5OTA3YmJlMmI2IiwiaWF0IjoxNzAwNjI1MjgzLCJleHAiOjE3MDA2NjEyODN9.-QIYdBbqGgVRRFs0RWiz804sYmi-Gc27hHPbqzCffXE",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
